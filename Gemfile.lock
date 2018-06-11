@@ -73,6 +73,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    down (4.5.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -80,6 +81,9 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    image_processing (1.2.0)
+      mini_magick (~> 4.0)
+      ruby-vips (>= 2.0.10, < 3)
     io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -97,6 +101,7 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
     mimemagic (0.3.2)
+    mini_magick (4.8.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -138,6 +143,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    ruby-vips (2.0.12)
+      ffi (~> 1.9)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.5.6)
@@ -154,6 +161,8 @@ GEM
     selenium-webdriver (3.12.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+    shrine (2.11.0)
+      down (~> 4.1)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -197,12 +206,14 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  image_processing
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.11)
   rails (~> 5.2.0)
   sass-rails (~> 5.0)
   selenium-webdriver
+  shrine
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

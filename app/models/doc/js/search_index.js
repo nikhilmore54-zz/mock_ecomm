@@ -1,0 +1,1 @@
+var search_data = {"index":{"searchIndex":["applicationrecord","imageuploader","photo"],"longSearchIndex":["applicationrecord","imageuploader","photo"],"info":[["ApplicationRecord","","ApplicationRecord.html","",""],["ImageUploader","","ImageUploader.html","",""],["Photo","","Photo.html","",""]]}}

@@ -2,5 +2,5 @@
   <% if photo.image_data? %>
     <%= image_tag photo.image_url(:thumb) %>
   <% end %>
-  <p><%= photo.title %> | <%= link_to 'Edit', edit_photo_path(photo) %></p>
+  <p><%= photo.title %> | <%= link_to 'Edit', edit_photo_path(photo) %> | <%= button_to 'Add to cart', line_items_path(photo_id: photo), class: 'button is-warning add-to-cart' %></p>
 </div>

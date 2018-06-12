@@ -5,6 +5,7 @@
   <%= f.text_field :title %>
 
   <% if @photo.image_data %>
+    <%= image_tag @photo.image_url(:thumb) %>
     Remove Attachment: <%= f.check_box :remove_image %>
   <% end %>
   <%= f.hidden_field :image, value: @photo.cached_image_data %>

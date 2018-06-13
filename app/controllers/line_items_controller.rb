@@ -26,13 +26,11 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    debugger
     photo = Photo.find(params[:photo_id])
     @line_item = @cart.add_photo(photo)
     # LineItem.new(line_item_params)
 
     respond_to do |format|
-      debugger
       if @line_item.save
         format.html { redirect_to @line_item.cart, notice: 'Item added to cart.' }
         format.json { render :show, status: :created, location: @line_item }

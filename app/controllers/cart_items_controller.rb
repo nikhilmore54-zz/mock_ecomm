@@ -10,6 +10,7 @@ class CartItemsController < ApplicationController
     else
       flash[:error] = 'There was a problem adding the image to cart'
       redirect_to photos_path
+    end
   end
 
   def destroy

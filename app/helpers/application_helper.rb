@@ -4,8 +4,9 @@ module ApplicationHelper
       return "<span class='tag is-dark'>#{@cart.line_items.count}</span>".html_safe
     end
   end
-
+  
   def cart_has_items
+    debugger
     return @cart.line_items.count > 0
   end
 end

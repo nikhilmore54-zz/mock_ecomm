@@ -6,7 +6,6 @@ module ApplicationHelper
   end
   
   def cart_has_items
-    debugger
     return @cart.line_items.count > 0
   end
 end

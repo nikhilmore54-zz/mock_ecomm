@@ -15,4 +15,7 @@
       </h4>
     </div>
   </div>
+  <div class="column">
+      <%= button_to 'Place Order', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button" %>
+    </div>
 </section>

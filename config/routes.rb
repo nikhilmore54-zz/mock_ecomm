@@ -1,6 +1,5 @@
  Rails.application.routes.draw do
-  get 'orders_controller/new'
-  get 'orders_controller/create'
+  resources :orders
   resources :line_items
   resources :carts
   devise_for :users, controllers: {

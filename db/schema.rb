@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_06_14_123121) do
     t.datetime "updated_at"
   end
 
-  create_table "line_items", id: :bigint, default: nil, force: :cascade do |t|
+  create_table "line_items", id: :serial, force: :cascade do |t|
     t.bigint "photo_id"
     t.bigint "cart_id"
     t.datetime "created_at"

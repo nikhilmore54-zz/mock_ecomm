@@ -15,4 +15,7 @@
       </h4>
     </div>
   </div>
+  <div class="column">
+    <%= button_to 'Place Order', orders_path(cart_id: @cart.id), class: 'button is-success add-to-cart' %>
+  </div>
 </section>

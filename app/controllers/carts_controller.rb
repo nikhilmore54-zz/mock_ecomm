@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  before_action :authenticate_user!
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
@@ -15,7 +16,8 @@ class CartsController < ApplicationController
 
   # GET /carts/new
   def new
-    @cart = Cart.new
+    @cart = Cart.new({:user_id => current_user.id})
+    # @cart.user_id = current_user.id
   end
 
   # GET /carts/1/edit
@@ -26,6 +28,7 @@ class CartsController < ApplicationController
   # POST /carts.json
   def create
     @cart = Cart.new(cart_params)
+    @cart.user_id = current_user.id
 
     respond_to do |format|
       if @cart.save

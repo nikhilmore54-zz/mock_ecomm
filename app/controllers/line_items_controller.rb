@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  before_action :authenticate_user!
   include CurrentCart
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create]
@@ -28,6 +29,8 @@ class LineItemsController < ApplicationController
   def create
     photo = Photo.find(params[:photo_id])
     @line_item = @cart.add_photo(photo)
+    @cart.user_id = current_user.id
+    debugger
     # LineItem.new(line_item_params)
 
     respond_to do |format|

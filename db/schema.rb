@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< 18eb6709bc357627d869519a8734859a6daa20e0
 ActiveRecord::Schema.define(version: 2018_06_14_123121) do
+=======
+ActiveRecord::Schema.define(version: 2018_06_20_115157) do
+>>>>>>> Add order page
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +22,12 @@ ActiveRecord::Schema.define(version: 2018_06_14_123121) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< 18eb6709bc357627d869519a8734859a6daa20e0
+=======
+    t.boolean "status", default: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
+>>>>>>> Add order page
   end
 
   create_table "line_items", id: :serial, force: :cascade do |t|
@@ -30,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_06_14_123121) do
     t.index ["photo_id"], name: "index_line_items_on_photo_id"
   end
 
+<<<<<<< 18eb6709bc357627d869519a8734859a6daa20e0
   create_table "orders", id: :bigint, default: nil, force: :cascade do |t|
     t.text "delivery_address"
     t.text "delivery_type"
@@ -38,6 +49,18 @@ ActiveRecord::Schema.define(version: 2018_06_14_123121) do
     t.datetime "updated_at"
     t.bigint "cart_id"
     t.index ["cart_id"], name: "index_orders_on_cart_id"
+=======
+  create_table "orders", force: :cascade do |t|
+    t.string "delivery_address"
+    t.string "delivery_type"
+    t.string "payment_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "cart_id"
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+>>>>>>> Add order page
   end
 
   create_table "photos", force: :cascade do |t|
@@ -45,10 +68,18 @@ ActiveRecord::Schema.define(version: 2018_06_14_123121) do
     t.text "image_data"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< 18eb6709bc357627d869519a8734859a6daa20e0
   end
 
   create_table "users", id: false, force: :cascade do |t|
     t.bigint "id"
+=======
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_photos_on_user_id"
+  end
+
+  create_table "users", id: :serial, force: :cascade do |t|
+>>>>>>> Add order page
     t.text "email", default: ""
     t.text "encrypted_password", default: ""
     t.text "reset_password_token"
@@ -66,4 +97,11 @@ ActiveRecord::Schema.define(version: 2018_06_14_123121) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< 18eb6709bc357627d869519a8734859a6daa20e0
+=======
+  add_foreign_key "carts", "users"
+  add_foreign_key "orders", "carts"
+  add_foreign_key "orders", "users"
+  add_foreign_key "photos", "users"
+>>>>>>> Add order page
 end

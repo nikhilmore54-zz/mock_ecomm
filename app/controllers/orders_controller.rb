@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+<<<<<<< HEAD
 <<<<<<< 18eb6709bc357627d869519a8734859a6daa20e0
   def new
     @order = Order.new
@@ -34,6 +35,8 @@ class OrdersController < ApplicationController
   end
 end
 =======
+=======
+>>>>>>> master
   before_action :authenticate_user!
   def index
     @order = Order.all
@@ -64,5 +67,9 @@ end
   # def order_params
   #   params.require(:order).permit(:cart)
   # end
+<<<<<<< HEAD
 end
 >>>>>>> Add order page
+=======
+end
+>>>>>>> master

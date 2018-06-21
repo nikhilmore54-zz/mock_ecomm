@@ -4,6 +4,8 @@ class Cart < ApplicationRecord
 
 
 
+
+
   def add_photo(photo)
     current_item = line_items.find_by(photo_id: photo.id)
     if current_item
